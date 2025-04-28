@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D&D Character Sheet</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body x-data="embeddedJson" class="flex flex-col items-center justify-around">
+
+  <h1>D&D Character Sheet</h1>
+
+  <div class="flex flex-row gap-3 p-4 w-full justify-evenly" x-data="general">
+    <div class="flex flex-col">
+      <span x-text="characterName"></span>
+      <div class="flex flex-row gap-10 justify-between">
+        <span x-text="background"></span>
+        <span x-text="className"></span>
+      </div>
+      <div class="flex flex-row gap-10 justify-between">
+        <span x-text="species"></span>
+        <span x-text="subclass"></span>
+      </div>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="font-bold">AC:</span>
+      <span class="border rounded px-2 py-1 w-20" x-text="ac"></span>
+    </div>
+    <div class="flex flex-col justify-around">
+      <div class="flex justify-between items-center">
+        <span class="font-bold">max HP:</span>
+        <span class="border rounded px-2 py-1 w-20" x-text="maxHp"></span>
+      </div>
+      <div class="flex justify-between items-center" x-data="{cur: loadNum('hp')}" x-init="$watch('cur', sync('hp'))">
+        <span class="font-bold">cur HP:</span>
+        <input type="number" class="border rounded px-2 py-1 w-20" x-model="cur"/>
+      </div>
+    </div>
+    <div class="flex flex-col justify-around">
+      <div class="flex justify-between items-center">
+        <span class="font-bold">Hit Dice:</span>
+        <span class="border rounded px-2 py-1 w-20" x-text="hitDieMax"></span>
+      </div>
+      <div class="flex justify-between items-center" x-data="{cur: loadNum('hitDie')}" x-init="$watch('cur', sync('hitDie'))">
+        <span class="font-bold">Spent:</span>
+        <input type="number" class="border rounded px-2 py-1 w-20" x-model="cur"/>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-between items-cneter gap-4">
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Short Rest</button>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Long Rest</button>
+    </div>
+
+    <div class="flex flex-col justify-around">
+      <div class="flex justify-between items-center gap-1" x-data="{max: 3, cur: loadNum('deathSaveFail')}" x-init="$watch('cur', sync('deathSaveFail'))">
+        <span class="font-bold">Failed save:</span>
+        <template x-for="i in max" :key="i">
+          <input type="checkbox" :checked="cur >= i" @click="cur += (cur >= i) ? -1 : 1"/>
+        </template>
+      </div>
+      <div class="flex justify-between items-center gap-1" x-data="{max: 3, cur: loadNum('deathSaveSucc')}" x-init="$watch('cur', sync('deathSaveSucc'))">
+        <span class="font-bold">Successful save:</span>
+        <template x-for="i in max" :key="i">
+          <input type="checkbox" :checked="cur >= i" @click="cur += (cur >= i) ? -1 : 1"/>
+        </template>
+      </div>
+    </div>
+  </div>
+
+
+  <div x-data="{ isExpanded: true }" class="w-full">
+    <button type="button" class="flex w-full items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+      </svg>
+      Stats
+    </button>
+    <div x-cloak x-show="isExpanded" x-transition class="flex items-center mx-4 p-1 text-left underline-offset-2 rounded border">
+      Testsetsetset
+    </div>
+  </div>
+
+  <script>
+    // Embedded JSON - replace this during build step
+    const embeddedJson = /* #data# */
+
+
+    const LSK = "DND-CHARACTER" + embeddedJson.characterName;
+    const range = (size) => [...new Array(size).keys().map(x => x+1)];
+    const sync = (key) => (val) => localStorage.setItem(LSK+key, val);
+    const loadNum = (key) => {
+      const data = localStorage.getItem(LSK+key);
+      if (data) return parseInt(data)
+      else return 0
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  general: {
+    maxHp: 20,
+    ac: 10,
+    characterName: "Samuel Serivo",
+    hitDieMax: "4 D6",
+    background: "Noble",
+    species: "Human",
+    className: "Sorcerer",
+    subclass: "Wild Magic",
+    level: 3,
+    xp: 2700
+  }
+}
