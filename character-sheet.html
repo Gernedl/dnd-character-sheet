@@ -70,15 +70,127 @@
   </div>
 
 
-  <div x-data="{ isExpanded: true }" class="w-full">
+  <div x-data="{ isExpanded: false }" class="w-full">
+    <button type="button" class="flex w-full items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+      </svg>
+      Base Stats
+    </button>
+    <div x-cloak x-show="isExpanded" x-transition class="flex items-start mx-4 p-1 text-left underline-offset-2 gap-1 flex-wrap">
+      <template x-for="(val, key) in basestats" :key="key">
+        <div class="rounded border p-1"><b x-text="transformKey(key)"></b>: <span x-text="val"></span></div>
+      </template>
+    </div>
+  </div>
+
+  <div x-data="{ isExpanded: false }" class="w-full">
     <button type="button" class="flex w-full items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
       </svg>
       Stats
     </button>
-    <div x-cloak x-show="isExpanded" x-transition class="flex items-center mx-4 p-1 text-left underline-offset-2 rounded border">
-      Testsetsetset
+    <div x-cloak x-show="isExpanded" x-transition class="flex items-start mx-4 p-1 text-left underline-offset-2 gap-1 flex-wrap">
+      <template x-for="(val, key) in stats" :key="key">
+        <div class="flex flex-col border rounded" x-data="val">
+          <div class="font-bold" x-text="transformKey(key)"></div>
+          <div>Stat: <span x-text="stat"></span>/<span x-text="getModier(stat)"></span></div>
+          <template x-for="(val, key) in abilities" :key="key">
+            <div><span x-text="transformKey(key)"></span>: <span x-text="applyProficiency(getModier(stat), val)" :class="{'text-green-700': val}"></span></div>
+          </template>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <div x-data="{ isExpanded: false }" class="w-full">
+    <button type="button" class="flex w-full items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+      </svg>
+      Usables
+    </button>
+    <div x-cloak x-show="isExpanded" x-transition>
+      <template x-for="(val, key) in usables" :key="key">
+        <div x-data="{isExpanded: false}" class="mx-8">
+          <div class="flex flex-row justify-between">
+            <button type="button" class="flex items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+              <span x-text="transformKey(key)"></span>
+            </button>
+            <div class="flex flex-row gap-1" x-data="{cur: loadNum(key)}" x-init="$watch('cur', sync(key))">
+              <template x-for="i in val.uses" :key="i">
+                <input type="checkbox" :checked="cur >= i" @click="cur += (cur >= i) ? -1 : 1"/>
+              </template>
+            </div>
+          </div>
+          <div x-cloak x-show="isExpanded" x-transition x-text="val.desc"></div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <div x-data="{ isExpanded: false }" class="w-full">
+    <button type="button" class="flex w-full items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+      </svg>
+      Misc
+    </button>
+    <div x-cloak x-show="isExpanded" x-transition>
+      <template x-for="(val, key) in misc" :key="key">
+        <div x-data="{isExpanded: false}" class="mx-8">
+          <div class="flex flex-row justify-between">
+            <button type="button" class="flex items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+              <span x-text="transformKey(key)"></span>
+            </button>
+          </div>
+          <div x-cloak x-show="isExpanded" x-transition x-text="val"></div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <div x-data="{ isExpanded: false }" class="w-full">
+    <button type="button" class="flex w-full items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+      </svg>
+      Equipment
+    </button>
+    <div x-cloak x-show="isExpanded" x-transition>
+      <table class="table-auto border-collapse border border-gray-400 w-full">
+        <thead>
+          <tr>
+            <th class="border border-gray-300 px-4 py-2">Name</th>
+            <th class="border border-gray-300 px-4 py-2">Quantity</th>
+            <th class="border border-gray-300 px-4 py-2">Weight</th>
+            <th class="border border-gray-300 px-4 py-2">Worth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template x-for="equ in equipment" :key="equ.name">
+            <tr>
+              <td class="border border-gray-300 px-4 py-2" x-text="equ.name"></td>
+              <td class="border border-gray-300 px-4 py-2" x-text="equ.quantity"></td>
+              <td class="border border-gray-300 px-4 py-2" x-text="equ.weight"></td>
+              <td class="border border-gray-300 px-4 py-2" x-text="equ.worth"></td>
+            </tr>
+          </template>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">total</td>
+            <td class="border border-gray-300 px-4 py-2" x-text="equipment.reduce((a,b) => a+b.quantity, 0)"></td>
+            <td class="border border-gray-300 px-4 py-2" x-text="equipment.reduce((a,b) => a+b.weight, 0)"></td>
+            <td class="border border-gray-300 px-4 py-2" x-text="equipment.reduce((a,b) => a+b.worth, 0)"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -86,7 +198,9 @@
     // Embedded JSON - replace this during build step
     const embeddedJson = /* #data# */
 
-
+    const getModier = (stat) => 0 + Math.floor((stat - 10) / 2)
+    const applyProficiency = (val, doApply) => doApply ? (val + (embeddedJson?.basestats?.proficiencyBonus ?? 0)) : val
+    const transformKey = (key) => key.charAt(0).toUpperCase()+key.slice(1).replace(/([a-z])([A-Z])/g, '$1 $2');
     const LSK = "DND-CHARACTER" + embeddedJson.characterName;
     const range = (size) => [...new Array(size).keys().map(x => x+1)];
     const sync = (key) => (val) => localStorage.setItem(LSK+key, val);
@@ -95,6 +209,7 @@
       if (data) return parseInt(data)
       else return 0
     };
+    console.log(embeddedJson)
   </script>
 
 </body>

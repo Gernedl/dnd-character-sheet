@@ -10,5 +10,105 @@
     subclass: "Wild Magic",
     level: 3,
     xp: 2700
-  }
+  },
+  basestats: {
+    proficiencyBonus: 2,
+    initiative: 10,
+    speed: "30 ft",
+    size: "medium",
+    carryCapacity: 165,
+    passivePerception: 13,
+    spellcastingModifier: 4,
+    spellSaveDc: 14,
+    spellAttackBonus: 16,
+  },
+  stats: {
+    strength: {
+      stat: 11,
+      abilities: {
+        save: false,
+        athletics: false
+      }
+    },
+    dexterity: {
+      stat: 11,
+      abilities: {
+        save: false,
+        acrobatics: false,
+        sleightOfHand: false,
+        stealth: false
+      }
+    },
+    constitution: {
+      stat: 15,
+      abilities: {
+        save: true,
+      }
+    },
+    intelligence: {
+      stat: 12,
+      abilities: {
+        save: false,
+        arcana: true,
+        history: true,
+        religion: true,
+        investigation: false,
+        nature: false
+      }
+    },
+    wisdom: {
+      stat: 13,
+      abilities: {
+        insight: true,
+        perception: true,
+        save: false,
+        animalHandling: false,
+        medicine: false,
+        survival: false
+      }
+    },
+    charisma: {
+      stat: 18,
+      abilities: {
+        save: true,
+        deception: true,
+        intimidation: true,
+        persuasion: true,
+        performance: false
+      }
+    },
+  },
+  usables: {
+    sorceryPoints: {
+      uses: 3,
+      desc: "Can be used for Metamagic and converted to spell slots"
+    },
+    tidesOfMagic: {
+      uses: 1,
+      desc: "Gives advantage, resets after using a spell slot"
+    },
+    inateSorcery: {
+      uses: 2,
+      desc: "Gives advantage on spells + increases the spell save dc by one"
+    },
+    magicInitiate: {
+      uses: 1,
+      desc: "Versatile. Cleric. Guidance, Sanctuary, Light"
+    },
+    waterskin: {
+      uses: 1,
+      desc: "Holds a gallon of water (liquid)"
+    },
+    hat: {
+      uses: 3,
+      desc: "spawns an animal (bat, rat, frog)"
+    }
+  },
+  misc: {
+    skilled: "Proficiency in Insight, Perception and Religion"
+  },
+  equipment: [
+    {name: "Perfume", weight: 0, quantity: 1, worth: "5gp"}
+  ],
+
 }
