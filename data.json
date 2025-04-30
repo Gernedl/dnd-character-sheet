@@ -105,10 +105,170 @@
     }
   },
   misc: {
-    skilled: "Proficiency in Insight, Perception and Religion"
+    skilled: "Proficiency in Insight, Perception and Religion",
+    appearance: "Jung(19), Gepflegt, Fröhlich",
+    backstory: "Noble\nReiche Eltern, die Magie hassen. Musste meine Magie unterdrücken, eines Tages habe ich beschlossen wegzulaufen um meine Magie auszuüben und Abenteuer zu erleben.\nIm Gegensatz zu meinen Eltern habe ich mich mit meiner Großmutter (Matilda) gut verstanden. Sie hinterließ mir einen besonderen Ring.",
+    languages: "Common, Orc, Halfling"
   },
   equipment: [
-    {name: "Perfume", weight: 0, quantity: 1, worth: "5gp"}
+    {name: "Perfume", weight: 0, quantity: 1, worth: "5gp"},
+    {name: "Fine Clothes", weight: 6, quantity: 1, worth: "15gp"},
+    {name: "Playing Cards", weight: 0, quantity: 1, worth: "5sp"},
+    {name: "Spear", weight: 3, quantity: 1, worth: "1gp"},
+    {name: "Dagger", weight: 1, quantity: 2, worth: "2gp"},
+    {name: "Arcane Focus (Ring)", weight: 0, quantity: 1, worth: "-"},
+    {name: "Backpack", weight: 5, quantity: 1, worth: "2gp"},
+    {name: "Caltrops", weight: 2, quantity: 1, worth: "1gp"},
+    {name: "Crowbar", weight: 5, quantity: 1, worth: "2gp"},
+    {name: "Oil", weight: 1, quantity: 2, worth: "1sp"},
+    {name: "Rope", weight: 5, quantity: 1, worth: "1gp"},
+    {name: "Tinderbox", weight: 1, quantity: 1, worth: "5sp"},
+    {name: "Torches", weight: 1, quantity: 6, worth: "1cp"},
+    {name: "Waterskin", weight: 5, quantity: 1, worth: "2sp"},
+    {name: "Ring (Oma)", weight: 0, quantity: 1, worth: "-"},
+    {name: "Bedroll", weight: 7, quantity: 1, worth: "1gp"},
+    {name: "Ration", weight: 2, quantity: 22, worth: "5sp"},
+    {name: "Book", weight: 5, quantity: 1, worth: "25gp"},
+    {name: "PoH", weight: 0.5, quantity: 1, worth: "50gp"},
+    {name: "PgM", weight: 0.5, quantity: 3, worth: "-"},
   ],
-
+  coins: {cp: 0, sp: 7, ep: 0, gp: 8, pp: 0},
+  spellslots: {level1: 4, level2: 3},
+  spells: {
+    guidance: {
+      desc: "",
+      attributes: {
+        level: 0,
+        castingTime: "A",
+        range: 0,
+        requirements: "C-VS",
+        misc: "1 min Cleric"
+      }
+    },
+    light: {
+      desc: "makes an item shine",
+      attributes: {
+        level: 0,
+        castingTime: "A",
+        range: 0,
+        requirements: "-V",
+        misc: "1 min Cleric"
+      }
+    },
+    sanctuary: {
+      desc: "",
+      attributes: {
+        level: 1,
+        castingTime: "BA",
+        range: 30,
+        requirements: "-VS",
+        misc: "1 min Cleric"
+      }
+    },
+    mageHand: {
+      desc: "",
+      attributes: {
+        level: 0,
+        castingTime: "A",
+        range: 30,
+        requirements: "-VS",
+        misc: "1 min"
+      }
+    },
+    minorIllusion: {
+      desc: "",
+      attributes: {
+        level: 0,
+        castingTime: "A",
+        range: 30,
+        requirements: "-S",
+        misc: "1 min"
+      }
+    },
+    shockingGrasp: {
+      desc: "",
+      attributes: {
+        level: 0,
+        castingTime: "A",
+        range: 0,
+        requirements: "-VS",
+      }
+    },
+    sorcerersBurst: {
+      desc: "",
+      attributes: {
+        level: 0,
+        castingTime: "A",
+        range: 120,
+        requirements: "-VS",
+      }
+    },
+    magicMissile: {
+      desc: "",
+      attributes: {
+        level: 1,
+        castingTime: "A",
+        range: 120,
+        requirements: "-VS",
+      }
+    },
+    shield: {
+      desc: "",
+      attributes: {
+        level: 1,
+        castingTime: "R",
+        range: 0,
+        requirements: "-VS",
+        misc: "on hit"
+      }
+    },
+    sleep: {
+      desc: "",
+      attributes: {
+        level: 1,
+        castingTime: "A",
+        range: 60,
+        requirements: "C-VS",
+        misc: "5ft radius"
+      }
+    },
+    witchBolt: {
+      desc: "",
+      attributes: {
+        level: 1,
+        castingTime: "A",
+        range: 60,
+        requirements: "C-VS",
+      }
+    },
+    mirrorImage: {
+      desc: "",
+      attributes: {
+        level: 2,
+        castingTime: "A",
+        range: 0,
+        requirements: "-VS",
+        misc: "1 min"
+      }
+    },
+    mistyStep: {
+      desc: "",
+      attributes: {
+        level: 2,
+        castingTime: "BA",
+        range: 30,
+        requirements: "-V",
+      }
+    },
+    shatter: {
+      desc: "",
+      attributes: {
+        level: 2,
+        castingTime: "A",
+        range: 60,
+        requirements: "-VS",
+        misc: "10ft radius"
+      }
+    },
+  }
 }

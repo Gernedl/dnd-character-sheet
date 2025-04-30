@@ -127,7 +127,46 @@
               </template>
             </div>
           </div>
-          <div x-cloak x-show="isExpanded" x-transition x-text="val.desc"></div>
+          <div x-cloak x-show="isExpanded" x-transition x-text="val.desc" class="whitespace-pre-line"></div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <div x-data="{ isExpanded: false }" class="w-full">
+    <button type="button" class="flex w-full items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+      </svg>
+      Spells
+    </button>
+    <div x-cloak x-show="isExpanded" x-transition>
+      <div class="flex flex-row justify-around">
+        <template x-for="(val,key) in spellslots">
+          <div x-data="{cur: loadNum(key)}" x-init="$watch('cur', sync(key))">
+              <b x-text="transformKey(key)"></b>:
+              <template x-for="i in val" :key="i">
+                <input type="checkbox" :checked="cur >= i" @click="cur += (cur >= i) ? -1 : 1"/>
+              </template>
+          </div>
+        </template>
+      </div>
+      <template x-for="(val, key) in spells" :key="key">
+        <div x-data="{isExpanded: false}" class="mx-8">
+          <div class="flex flex-row justify-between">
+            <button type="button" class="flex items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+              <span x-text="transformKey(key)"></span>
+            </button>
+            <div class="flex flex-row-reverse grow items-center gap-1">
+              <template x-for="(val, key) in val.attributes" :key="key">
+                <div><b x-text="transformKey(key)"></b>: <span x-text="val"></span></div>
+              </template>
+            </div>
+          </div>
+          <div x-cloak x-show="isExpanded" x-transition x-text="val.desc" class="whitespace-pre-line"></div>
         </div>
       </template>
     </div>
@@ -151,7 +190,7 @@
               <span x-text="transformKey(key)"></span>
             </button>
           </div>
-          <div x-cloak x-show="isExpanded" x-transition x-text="val"></div>
+          <div x-cloak x-show="isExpanded" x-transition x-text="val" class="whitespace-pre-line"></div>
         </div>
       </template>
     </div>
@@ -165,6 +204,11 @@
       Equipment
     </button>
     <div x-cloak x-show="isExpanded" x-transition>
+      <div class="flex flex-row justify-around">
+        <template x-for="(val,key) in coins" :key="key">
+          <div class="border rounded"><b x-text="key.toUpperCase()"></b>:<span x-text="val"></div>
+        </template>
+      </div>
       <table class="table-auto border-collapse border border-gray-400 w-full">
         <thead>
           <tr>
@@ -183,11 +227,11 @@
               <td class="border border-gray-300 px-4 py-2" x-text="equ.worth"></td>
             </tr>
           </template>
-          <tr>
-            <td class="border border-gray-300 px-4 py-2">total</td>
+          <tr class="bg-gray-800 text-white">
+            <td class="border border-gray-300 px-4 py-2">Total</td>
             <td class="border border-gray-300 px-4 py-2" x-text="equipment.reduce((a,b) => a+b.quantity, 0)"></td>
-            <td class="border border-gray-300 px-4 py-2" x-text="equipment.reduce((a,b) => a+b.weight, 0)"></td>
-            <td class="border border-gray-300 px-4 py-2" x-text="equipment.reduce((a,b) => a+b.worth, 0)"></td>
+            <td class="border border-gray-300 px-4 py-2" x-text="equipment.reduce((a,b) => a+b.weight*b.quantity, 0)"></td>
+            <td class="border border-gray-300 px-4 py-2">-</td>
           </tr>
         </tbody>
       </table>
@@ -200,7 +244,7 @@
 
     const getModier = (stat) => 0 + Math.floor((stat - 10) / 2)
     const applyProficiency = (val, doApply) => doApply ? (val + (embeddedJson?.basestats?.proficiencyBonus ?? 0)) : val
-    const transformKey = (key) => key.charAt(0).toUpperCase()+key.slice(1).replace(/([a-z])([A-Z])/g, '$1 $2');
+    const transformKey = (key) => key.charAt(0).toUpperCase()+key.slice(1).replace(/([a-z])([A-Z0-9])/g, '$1 $2');
     const LSK = "DND-CHARACTER" + embeddedJson.characterName;
     const range = (size) => [...new Array(size).keys().map(x => x+1)];
     const sync = (key) => (val) => localStorage.setItem(LSK+key, val);
