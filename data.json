@@ -68,7 +68,7 @@
       }
     },
     charisma: {
-      stat: 18,
+      stat: 19,
       abilities: {
         save: true,
         deception: true,
@@ -83,13 +83,13 @@
       uses: 3,
       desc: "Can be used for Metamagic and converted to spell slots"
     },
-    tidesOfMagic: {
+    tidesOfChaos: {
       uses: 1,
-      desc: "Gives advantage, resets after using a spell slot"
+      desc: "You can manipulate chaos itself to give yourself Advantage on one D20 Test before you roll the d20. Once you do so, you must cast a Sorcerer spell with a spell slot or finish a Long Rest before you can use this feature again.\nIf you do cast a Sorcerer spell with a spell slot before you finish a Long Rest, you automatically roll on the Wild Magic Surge table."
     },
     inateSorcery: {
       uses: 2,
-      desc: "Gives advantage on spells + increases the spell save dc by one"
+      desc: "An event in your past left an indelible mark on you, infusing you with simmering magic. As a Bonus Action, you can unleash that magic for 1 minute, during which you gain the following benefits:\n*   The spell save DC of your Sorcerer spells increases by 1.\n*   You have Advantage on the attack rolls of Sorcerer spells you cast.\nYou can use this feature twice, and you regain all expended uses of it when you finish a Long Rest."
     },
     magicInitiate: {
       uses: 1,
@@ -105,10 +105,14 @@
     }
   },
   misc: {
+    seekingSpell:"Cost: 1 Sorcery Point\nIf you make an attack roll for a spell and miss, you can spend 1 Sorcery Point to reroll the d20, and you must use the new roll.\nYou can use Seeking Spell even if you've already used a different Metamagic option during the casting of the spell.",
+    carefulSpell: "Cost: 1 Sorcery Point\nWhen you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, spend 1 Sorcery Point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell, and it takes no damage if it would normally take half damage on a successful save.",
+    inspirationalLeader: "You gain the following benefits. Ability Score Increase. Increase your Wisdom or Charisma score by 1, to a maximum of 20. Bolstering Performance. When you finish a Short or Long Rest, you can give an inspiring perfor-mance: a speech, song, or dance. When you do so, choose up to six allies (which can include yourself) within 30 feet of yourself who witness the perfor-mance. The chosen creatures each gain Temporary Hit Points equal to your character level plus the modifier of the ability you increased with this feat.",
+    wildMagicSurge: "Your spellcasting can unleash surges of untamed magic. Once per turn, you can roll 1d20 immediately after you cast a Sorcerer spell with a spell slot.\nIf you roll a 20, roll on the Wild Magic Surge table to create a magical effect.\nIf the magical effect is a spell, it is too wild to be affected by your Metamagic.",
     skilled: "Proficiency in Insight, Perception and Religion",
     appearance: "Jung(19), Gepflegt, Fröhlich",
     backstory: "Noble\nReiche Eltern, die Magie hassen. Musste meine Magie unterdrücken, eines Tages habe ich beschlossen wegzulaufen um meine Magie auszuüben und Abenteuer zu erleben.\nIm Gegensatz zu meinen Eltern habe ich mich mit meiner Großmutter (Matilda) gut verstanden. Sie hinterließ mir einen besonderen Ring.",
-    languages: "Common, Orc, Halfling"
+    languages: "Common, Orc, Halfling",
   },
   equipment: [
     {name: "Perfume", weight: 0, quantity: 1, worth: "5gp"},
@@ -136,7 +140,7 @@
   spellslots: {level1: 4, level2: 3},
   spells: {
     guidance: {
-      desc: "",
+      desc: "You touch a willing creature and choose a skill. Until the spell ends, the creature adds 1d4 to any ability check using the chosen skill.",
       attributes: {
         level: 0,
         castingTime: "A",
@@ -146,17 +150,17 @@
       }
     },
     light: {
-      desc: "makes an item shine",
+      desc: "You touch one Large or smaller object that isn't being worn or carried by someone else. Until the spell ends, the object sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. The light can be colored as you like. Covering the object with something opaque blocks the light. The spell ends if you cast it again.",
       attributes: {
         level: 0,
         castingTime: "A",
         range: 0,
         requirements: "-V",
-        misc: "1 min Cleric"
+        misc: "1 hour Cleric"
       }
     },
     sanctuary: {
-      desc: "",
+      desc: "You ward a creature within range. Until the spell ends, any creature who targets the warded creature with an attack roll or a damaging spell must succeed on a Wisdom saving throw or either choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from areas of effect. The spell ends if the warded creature makes an attack roll, casts a spell, or deals damage.",
       attributes: {
         level: 1,
         castingTime: "BA",
@@ -165,8 +169,18 @@
         misc: "1 min Cleric"
       }
     },
+    message: {
+      desc: "You point toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear. You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence; 1 foot of stone, metal, or wood; or a thin sheet of lead blocks the spell.",
+      attributes: {
+        level: 0,
+        castingTime: "A",
+        range: 120,
+        requirements: "-S",
+        misc: "1 round"
+      }
+    },
     mageHand: {
-      desc: "",
+      desc: "A spectral, floating hand appears at a point you choose within range. The hand lasts for the dura-tion. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.When you cast the spell, you can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. As a Magic action on your later turns, you can control the hand thus again. As part of that action, you can move the hand up to 30 feet. The hand can't attack, activate magic items, or carry more than 10 pounds.",
       attributes: {
         level: 0,
         castingTime: "A",
@@ -176,7 +190,7 @@
       }
     },
     minorIllusion: {
-      desc: "",
+      desc: "You create a sound or an image of an object within range that lasts for the duration. See the descriptions below for the effects of each. The illusion ends if you cast this spell again. If a creature takes a Study action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investi-gation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.\n Sound. If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.\n Image. If you create an image of an object-such as a chair, muddy footprints, or a small chest-it must be no larger than a 5-foot Cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, since things can pass through it.",
       attributes: {
         level: 0,
         castingTime: "A",
@@ -186,7 +200,7 @@
       }
     },
     shockingGrasp: {
-      desc: "",
+      desc: "Lightning springs from you to a creature that you try to touch. Make a melee spell attack against the target. On a hit, the target takes 2d8 Lightning dam-age, and it can't make Opportunity Attacks until the start of its next turn. Cantrip Upgrade. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).",
       attributes: {
         level: 0,
         castingTime: "A",
@@ -195,7 +209,7 @@
       }
     },
     sorcerersBurst: {
-      desc: "",
+      desc: "You cast sorcerous energy at one creature or object within range. Make a ranged attack roll against the target. On a hit, the target takes 1d8 damage of a type you choose: Acid, Cold, Fire, Lightning, Poison, Psychic, or Thunder. If you roll an 8 on a d8 for this spell, you can roll another d8, and add it to the damage. When you cast this spell, the maximum number of these d&s you can add to the spell's damage equals your spell-casting ability modifier. Cantrip Upgrade. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).",
       attributes: {
         level: 0,
         castingTime: "A",
@@ -204,7 +218,7 @@
       }
     },
     magicMissile: {
-      desc: "",
+      desc: "You create three glowing darts of magical force. Each dart strikes a creature of your choice that you can see within range. A dart deals 1d4 + 1 Force damage to its target. The darts all strike simultane-ously, and you can direct them to hit one creature or several. Using a Higher-Level Spell Slot. The spell creates one more dart for each spell slot level above 1.",
       attributes: {
         level: 1,
         castingTime: "A",
@@ -213,7 +227,7 @@
       }
     },
     shield: {
-      desc: "",
+      desc: "An imperceptible barrier of magical force protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from Magic Missile.",
       attributes: {
         level: 1,
         castingTime: "R",
@@ -223,7 +237,7 @@
       }
     },
     sleep: {
-      desc: "",
+      desc: "Each creature of your choice in a 5-foot-radius Sphere centered on a point within range must succeed on a Wisdom saving throw or have the Incapacitated condition until the end of its next turn, at which point it must repeat the save. If the target fails the second save, the target has the Unconscious condition for the duration. The spell ends on a target if it takes damage or someone within 5 feet of it takes an action to shake it out of the spell's effect. Creatures that don't sleep, such as elves, or that have Immunity to the Exhaustion condition automatically succeed on saves against this spell.",
       attributes: {
         level: 1,
         castingTime: "A",
@@ -233,7 +247,7 @@
       }
     },
     witchBolt: {
-      desc: "",
+      desc: "A beam of crackling energy lances toward a creature within range, forming a sustained arc of lightning between you and the target. Make a ranged spell attack against it. On a hit, the target takes 2d12 Lightning damage. On each of your subsequent turns, you can take a Bonus Action to deal 1d12 Lightning damage to the target automatically, even if the first attack missed. The spell ends if the target is ever outside the spell's range or if it has Total Cover from you. Using a Higher-Level Spell Slot. The initial damage increases by ld12 for each spell slot level above l.",
       attributes: {
         level: 1,
         castingTime: "A",
@@ -242,7 +256,7 @@
       }
     },
     mirrorImage: {
-      desc: "",
+      desc: "Three illusory duplicates of yourself appear in your space. Until the spell ends, the duplicates move with you and mimic your actions, shifting position so it's impossible to track which image is real. Each time a creature hits you with an attack roll during the spell's duration, roll a d6 for each of your remaining duplicates. If any of the dos rolls a 3 or higher, one of the duplicates is hit instead of you, and the duplicate is destroyed. The duplicates otherwise ignore all other damage and effects. The spell ends when all three duplicates are destroyed. A creature is unaffected by this spell if it has the Blinded condition, Blindsight, or Truesight.",
       attributes: {
         level: 2,
         castingTime: "A",
@@ -252,7 +266,7 @@
       }
     },
     mistyStep: {
-      desc: "",
+      desc: "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space you can see.",
       attributes: {
         level: 2,
         castingTime: "BA",
@@ -261,7 +275,7 @@
       }
     },
     shatter: {
-      desc: "",
+      desc: "A loud noise erupts from a point of your choice within range. Each creature in a 10-foot-radius Sphere centered there makes a Constitution saving throw, taking 3d8 Thunder damage on a failed save or half as much damage on a successful one. A Construct has Disadvantage on the save. A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area. Using a Higher-Level Spell Slot. The damage increases by 1d8 for each spell slot level above 2.",
       attributes: {
         level: 2,
         castingTime: "A",
