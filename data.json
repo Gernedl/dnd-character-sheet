@@ -1,6 +1,6 @@
 {
   general: {
-    maxHp: 20,
+    maxHp: 26,
     ac: 10,
     characterName: "Samuel Serivo",
     hitDieMax: "4 D6",
@@ -8,12 +8,12 @@
     species: "Human",
     className: "Sorcerer",
     subclass: "Wild Magic",
-    level: 3,
-    xp: 2700
+    level: 4,
+    xp: 3750
   },
   basestats: {
     proficiencyBonus: 2,
-    initiative: 10,
+    initiative: 0,
     speed: "30 ft",
     size: "medium",
     carryCapacity: 165,
@@ -80,8 +80,8 @@
   },
   usables: {
     sorceryPoints: {
-      uses: 3,
-      desc: "Can be used for Metamagic and converted to spell slots"
+      uses: 4,
+      desc: "Can be used for Metamagic and converted to spell slots\n lvl 1 Spell Slot = 2 Sorcery Points\n lvl 2 Spell Slot = 3 Sorcery Points\n lvl 3 Spell Slot = 5 Sorcery Points\n lvl 4 Spell Slot = 6 Sorcery Points\n lvl 5 Spell Slot = 7 Sorcery Points"
     },
     tidesOfChaos: {
       uses: 1,
@@ -102,6 +102,14 @@
     hat: {
       uses: 3,
       desc: "spawns an animal (bat, rat, frog)"
+    },
+    heroicInspiration: {
+      uses: 1,
+      desc: "reroll a d20 (can also be gifted to allies)"
+    },
+    magischeTrunkenheit: {
+      uses: 1,
+      desc: "siehe hausregeln"
     }
   },
   misc: {
@@ -117,6 +125,7 @@
   equipment: [
     {name: "Perfume", weight: 0, quantity: 1, worth: "5gp"},
     {name: "Fine Clothes", weight: 6, quantity: 1, worth: "15gp"},
+    {name: "Fine Clothes (2)", weight: 10, quantity: 1, worth: "25gp"},
     {name: "Playing Cards", weight: 0, quantity: 1, worth: "5sp"},
     {name: "Spear", weight: 3, quantity: 1, worth: "1gp"},
     {name: "Dagger", weight: 1, quantity: 2, worth: "2gp"},
@@ -131,10 +140,12 @@
     {name: "Waterskin", weight: 5, quantity: 1, worth: "2sp"},
     {name: "Ring (Oma)", weight: 0, quantity: 1, worth: "-"},
     {name: "Bedroll", weight: 7, quantity: 1, worth: "1gp"},
-    {name: "Ration", weight: 2, quantity: 22, worth: "5sp"},
+    {name: "Ration", weight: 2, quantity: 17, worth: "5sp"},
     {name: "Book", weight: 5, quantity: 1, worth: "25gp"},
     {name: "PoH", weight: 0.5, quantity: 1, worth: "50gp"},
-    {name: "PgM", weight: 0.5, quantity: 3, worth: "-"},
+    {name: "PgM", weight: 0.5, quantity: 2, worth: "-"},
+    {name: "Morning Star", weight: 4, quantity: 1, worth: "15gp"},
+    {name: "Walking Stick", weight: 5, quantity: 1, worth: "-"},
   ],
   coins: {cp: 0, sp: 7, ep: 0, gp: 8, pp: 0},
   spellslots: {level1: 4, level2: 3},
@@ -200,7 +211,7 @@
       }
     },
     shockingGrasp: {
-      desc: "Lightning springs from you to a creature that you try to touch. Make a melee spell attack against the target. On a hit, the target takes 2d8 Lightning dam-age, and it can't make Opportunity Attacks until the start of its next turn. Cantrip Upgrade. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).",
+      desc: "Lightning springs from you to a creature that you try to touch. Make a melee spell attack against the target. On a hit, the target takes 1d8 Lightning dam-age, and it can't make Opportunity Attacks until the start of its next turn. Cantrip Upgrade. The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).",
       attributes: {
         level: 0,
         castingTime: "A",

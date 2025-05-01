@@ -95,7 +95,7 @@
       </svg>
       Stats
     </button>
-    <div x-cloak x-show="isExpanded" x-transition class="flex items-start mx-4 p-1 text-left underline-offset-2 gap-1 flex-wrap">
+    <div x-cloak x-show="isExpanded" x-transition class="flex items-start mx-4 p-1 text-left underline-offset-2 gap-1 flex-wrap justify-between">
       <template x-for="(val, key) in stats" :key="key">
         <div class="flex flex-col border rounded" x-data="val">
           <div class="font-bold" x-text="transformKey(key)"></div>
