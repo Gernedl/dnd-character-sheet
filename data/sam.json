@@ -20,7 +20,7 @@
     passivePerception: 13,
     spellcastingModifier: 4,
     spellSaveDc: 14,
-    spellAttackBonus: 16,
+    spellAttackBonus: 6,
   },
   stats: {
     strength: {
