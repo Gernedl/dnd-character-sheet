@@ -131,7 +131,7 @@
               </svg>
               <span x-text="transformKey(key)"></span>
             </button>
-            <div class="flex flex-row gap-2" x-data="{cur: loadNum(key)}" x-init="$watch('cur', sync(key))">
+            <div class="flex flex-row gap-2 items-center text-base" x-data="{cur: loadNum(key)}" x-init="$watch('cur', sync(key))">
               <template x-for="i in val.uses" :key="i">
                 <input type="checkbox" :checked="cur >= i" @click="cur += (cur >= i) ? -1 : 1" class="scale-125"/>
               </template>

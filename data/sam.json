@@ -9,7 +9,7 @@
     className: "Sorcerer",
     subclass: "Wild Magic",
     level: 4,
-    xp: 5000
+    xp: 6550
   },
   basestats: {
     proficiencyBonus: 2,
@@ -142,14 +142,14 @@
     {name: "Waterskin", weight: 5, quantity: 1, worth: "2sp"},
     {name: "Ring (Oma)", weight: 0, quantity: 1, worth: "-"},
     {name: "Bedroll", weight: 7, quantity: 1, worth: "1gp"},
-    {name: "Ration", weight: 2, quantity: 17, worth: "5sp"},
+    {name: "Ration", weight: 2, quantity: 11, worth: "5sp"},
     {name: "Book", weight: 5, quantity: 1, worth: "25gp"},
-    {name: "PoH", weight: 0.5, quantity: 1, worth: "50gp"},
     {name: "PgM", weight: 0.5, quantity: 1, worth: "-"},
     {name: "Walking Stick", weight: 5, quantity: 1, worth: "-"},
     {name: "Schuppe (AC+2)", weight: 0, quantity: 1, worth: "-"},
+    {name: "Knöpfe", weight: 0, quantity: 7, worth: "-"},
   ],
-  coins: {cp: 0, sp: 187, ep: 0, gp: 8, pp: 0},
+  coins: {cp: 0, sp: 231, ep: 0, gp: 76, pp: 0},
   spellslots: {level1: 4, level2: 3},
   spells: {
     guidance: {
