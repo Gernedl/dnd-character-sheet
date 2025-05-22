@@ -155,7 +155,7 @@
     <div x-cloak x-show="isExpanded" x-transition class="divide-y">
       <div class="flex flex-row justify-around">
         <template x-for="(val,key) in spellslots">
-          <div class="flex flex-row gap-2" x-data="{cur: loadNum(key)}" x-init="$watch('cur', sync(key))">
+          <div class="flex flex-row gap-2 items-center text-base" x-data="{cur: loadNum(key)}" x-init="$watch('cur', sync(key))">
               <b x-text="transformKey(key)"></b>:
               <template x-for="i in val" :key="i">
                 <input type="checkbox" :checked="cur >= i" @click="cur += (cur >= i) ? -1 : 1" class="scale-125"/>
