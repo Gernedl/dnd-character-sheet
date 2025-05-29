@@ -1,26 +1,26 @@
 {
   general: {
-    maxHp: 26,
+    maxHp: 32,
     ac: 12,
     characterName: "Samuel Serivo",
-    hitDieMax: "4 D6",
+    hitDieMax: "5 D6",
     background: "Noble",
     species: "Human",
     className: "Sorcerer",
     subclass: "Wild Magic",
-    level: 4,
+    level: 5,
     xp: 6550
   },
   basestats: {
-    proficiencyBonus: 2,
+    proficiencyBonus: 3,
     initiative: 0,
     speed: "30 ft",
     size: "medium",
     carryCapacity: 165,
-    passivePerception: 13,
+    passivePerception: 14,
     spellcastingModifier: 4,
-    spellSaveDc: 14,
-    spellAttackBonus: 6,
+    spellSaveDc: 15,
+    spellAttackBonus: 7,
   },
   stats: {
     strength: {
@@ -80,7 +80,7 @@
   },
   usables: {
     sorceryPoints: {
-      uses: 4,
+      uses: 5,
       desc: "Can be used for Metamagic and converted to spell slots\n lvl 1 Spell Slot = 2 Sorcery Points\n lvl 2 Spell Slot = 3 Sorcery Points\n lvl 3 Spell Slot = 5 Sorcery Points\n lvl 4 Spell Slot = 6 Sorcery Points\n lvl 5 Spell Slot = 7 Sorcery Points"
     },
     tidesOfChaos: {
@@ -124,6 +124,7 @@
     concentration: "Some spells and other effects require Concentration to remain active, as specified in their descriptions.\n\n If the effect's creator loses Concentration, the effect ends. If the effect has a maximum duration, the effect's description specifies how long the creator can concentrate on it: up to 1 minute, 1 hour, or some other duration. The creator can end Concentration at any time (no action required). The following factors break Concentration.\n\n Another Concentration Effect. You lose Concentration on an effect the moment you start casting a spell that requires Concentration or activate another effect that requires Concentration.\n\n Damage. If you take damage, you must succeed on a Constitution saving throw to maintain Concen-tration. The DC equals 10 or half the damage taken (round down), whichever number is higher, up to a maximum DC of 30.\n\n Incapacitated or Dead. Your Concentration ends if you have the Incapacitated condition or you die.",
     actions: "Attack, Dash, Disengage, Dodge, Help, Hide, Influence, Magic, Ready, Search, Study, Utilize\n \nATTACK [ACTION]\n When you take the Attack action, you can make one attack roll with a weapon or an Unarmed Strike. Equipping and Unequipping Weapons. You can either equip or unequip one weapon when you make an attack as part of this action. You do so either before or after the attack. If you equip a weapon before an attack, you don't need to use it for that at-tack. Equipping a weapon includes drawing it from a sheath or picking it up. Unequipping a weapon includes sheathing, stowing, or dropping it. Moving between Attacks. If you move on your turn and have a feature, such as Extra Attack, that gives you more than one attack as part of the Attack ac-tion, you can use some or all of that movement to move between those attacks. \nDASH [ACTION]\n When you take the Dash action, you gain extra movement for the current turn. The increase equals your Speed after applying any modifiers. With a Speed of 30 feet, for example, you can move up to 60 feet on your turn if you Dash. If your Speed of 30 feet is reduced to 15 feet, you can move up to 30 feet this turn if you Dash. If you have a special speed, such as a Fly Speed or Swim Speed, you can use that speed instead of your Speed when you take this action. You choose which speed to use each time you take it. See also \"Speed.\" \nDISENGAGE [ACTION]\n If you take the Disengage action, your movement doesn't provoke Opportunity Attacks for the rest of the current turn. \nDODGE [ACTION\n If you take the Dodge action, you gain the following benefits: until the start of your next turn, any attack roll made against you has Disadvantage if you can see the attacker, and you make Dexterity saving throws with Advantage. You lose these benefits if you have the Incapacitated condition or if your Speed is O. \nHELP [ACTION]\n When you take the Help action, you do one of the following. Assist an Ability Check. Choose one of your skill or tool proficiencies and one ally who is near enough for you to assist verbally or physically when they make an ability check. That ally has Advantage on the next ability check they make with the chosen skill or tool. This benefit expires if the ally doesn't use it before the start of your next turn. The DM has final say on whether your assistance is possible. Assist an Attack Roll. You momentarily distract an enemy within 5 feet of you, giving Advantage to the next attack roll by one of your allies against that enemy. This benefit expires at the start of your next turn. \nHIDE [ACTION]\n With the Hide action, you try to conceal yourself. To do so, you must succeed on a DC 15 Dexterity (Stealth) check while you're Heavily Obscured or behind Three-Quarters Cover or Total Cover, and you must be out of any enemy's line of sight; if you can see a creature, you can discern whether it can see you. On a successful check, you have the Invisible con-dition. Make note of your check's total, which is the DC for a creature to find you with a Wisdom (Per-ception) check. \nINFLUENCE [ACTION]\n With the Influence action, you urge a monster to do something. Describe or roleplay how you're communicating with the monster. Are you trying to deceive, intimidate, amuse, or gently persuade? The DM then determines whether the monster feels willing, unwilling, or hesitant due to your interac-tion; this determination establishes whether an ability check is necessary, as explained below. Willing. If your urging aligns with the monster's desires, no ability check is necessary; the monster fulfills your request in a way it prefers. Unwilling. If your urging is repugnant to the monster or counter to its alignment, no ability check is necessary; it doesn't comply. Hesitant. If you urge the monster to do something that it is hesitant to do, you must make an ability check, which is affected by the monster's attitude: Indifferent, Friendly, or Hostile, each of which is defined in this glossary. The Influence Checks table suggests which ability check to make based on how you're interacting with the monster. The DM chooses the check, which has a default DC equal to 15 or the monster's Intelligence score, whichever is higher. On a successful check, the monster does as urged. On a failed check, you must wait 24 hours (or a duration set by the DM) before urging it in the same way again. \nMAGIC [ACTION]\n When you take the Magic action, you cast a spell that has a casting time of an action or use a feature or magic item that requires a Magic action to be activated. If you cast a spell that has a casting time of 1 minute or longer, you must take the Magic action on each turn of that casting, and you must maintain Concentration while you do so. If your Concentration is broken, the spell fails, but you don't expend a spell slot. See also \"Concentration.\" \nREADY [ACTION]\n You take the Ready action to wait for a particular circumstance before you act. To do so, you take this action on your turn, which lets you act by taking a Reaction before the start of your next turn. First, you decide what perceivable circumstance will trigger your Reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your Speed in response to it. Examples include \"If the cultist steps on the trapdoor, I'll pull the lever that opens it,\" and \"If the zombie steps next to me, I move away.\" When the trigger occurs, you can either take your Reaction right after the trigger finishes or ignore the trigger. When you Ready a spell, you cast it as normal (ex-pending any resources used to cast it) but hold its energy, which you release with your Reaction when the trigger occurs. To be readied, a spell must have a casting time of an action, and holding on to the spell's magic requires Concentration, which you can maintain up to the start of your next turn. If your Concentration is broken, the spell dissipates without taking effect. \nSEARCH [ACTION]\n When you take the Search action, you make a Wisdom check to discern something that isn't obvious. The Search table suggests which skills are applicable when you take this action, depending on what you're trying to detect. \nSTUDY [ACTION]\n When you take the Study action, you make an Intelligence check to study your memory, a book, a clue, or another source of knowledge and call to mind an important piece of information about it. The Areas of Knowledge table suggests which skills are applicable to various areas of knowledge. \nUTILIZE [ACTION]\n You normally interact with an object while doing something else, such as when you draw a sword as part of the Attack action. When an object requires an action for its use, you take the Utilize action.",
     conditions: "Blinded, Charmed, Deafened, Exhaustion, Frightened, Grappled, Incapacitated, Invisible, Paralyzed, Petrified, Poisoned, Prone, Restrained, Stunned, Unconscious\n\nBLINDED [CONDITION]\n While you have the Blinded condition, you experience the following effects. Can't See. You can't see and automatically fail any ability check that requires sight. Attacks Affected. Attack rolls against you have Advantage, and your attack rolls have Disadvantage. \nCHARMED [CONDITION]\n While you have the Charmed condition, you experience the following effects. Can't Harm the Charmer. You can't attack the charmer or target the charmer with damaging abilities or magical effects. Social Advantage. The charmer has Advantage on any ability check to interact with you socially. \nDEAFENED [CONDITION]\n While you have the Deafened condition, you experience the following effect. Can't Hear. You can't hear and automatically fail any ability check that requires hearing. \nEXHAUSTION [CONDITION]\n While you have the Exhaustion condition, you experience the following effects. Exhaustion Levels. This condition is cumulative. Each time you receive it, you gain 1 Exhaustion level. You die if your Exhaustion level is 6. D20 Tests Affected. When you make a D20 Test, the roll is reduced by 2 times your Exhaustion level. Speed Reduced. Your Speed is reduced by a number of feet equal to 5 times your Exhaustion level. Removing Exhaustion Levels. Finishing a Long Rest removes 1 of your Exhaustion levels. When your Exhaustion level reaches 0, the condition ends. \nFRIGHTENED [CONDITION]\n While you have the Frightened condition, you experience the following effects. Ability Checks and Attacks Affected. You have Disadvantage on ability checks and attack rolls while the source of fear is within line of sight. Can't Approach. You can't willingly move closer to the source of fear. \nGRAPPLED [CONDITION]\n While you have the Grappled condition, you experience the following effects. Speed O. Your Speed is O and can't increase. Attacks Affected. You have Disadvantage on attack rolls against any target other than the grappler. Movable. The grappler can drag or carry you when it moves, but every foot of movement costs it 1 extra foot unless you are Tiny or two or more sizes smaller than it. \nINCAPACITATED [CONDITION]\n While you have the Incapacitated condition, you experience the following effects. Inactive. You can't take any action, Bonus Action, or Reaction. No Concentration. Your Concentration is broken. Speechless. You can't speak. Surprised. If you're Incapacitated when you roll Initiative, you have Disadvantage on the roll. \nINVISIBLE [CONDITION]\n While you have the Invisible condition, you experience the following effects. Surprise. If you're Invisible when you roll Initia-tive, you have Advantage on the roll. Concealed. You aren't affected by any effect that requires its target to be seen unless the effect's creator can somehow see you. Any equipment you are wearing or carrying is also concealed. Attacks Affected. Attack rolls against you have Disadvantage, and your attack rolls have Advan-tage. If a creature can somehow see you, you don't gain this benefit against that creature. \nPARALYZED [CONDITION]\n While you have the Paralyzed condition, you experience the following effects. Incapacitated. You have the Incapacitated condition. Speed 0. Your Speed is 0 and can't increase. Saving Throws Affected. You automatically fail Strength and Dexterity saving throws. Attacks Affected. Attack rolls against you have Advantage. Automatic Critical Hits. Any attack roll that hits you is a Critical Hit if the attacker is within 5 feet of you. \nPETRIFIED [CONDITION]\n While you have the Petrified condition, you experience the following effects. Turned to Inanimate Substance. You are trans-formed, along with any nonmagical objects you are wearing and carrying, into a solid inanimate substance (usually stone). Your weight increases by a factor of ten, and you cease aging. Incapacitated. You have the Incapacitated condition. Speed 0. Your Speed is 0 and can't increase. Attacks Affected. Attack rolls against you have Advantage. Saving Throws Affected. You automatically fail Strength and Dexterity saving throws. Resist Damage. You have Resistance to all damage. Poison Immunity. You have Immunity to the Poisoned condition. \nPOISONED [CONDITION]\n While you have the Poisoned condition, you experience the following effect. Ability Checks and Attacks Affected. You have Disadvantage on attack rolls and ability checks. \nRESTRAINED [CONDITION]\n While you have the Restrained condition, you experience the following effects. Speed 0. Your Speed is 0 and can't increase. Attacks Affected. Attack rolls against you have Advantage, and your attack rolls have Disadvantage. Saving Throws Affected. You have Disadvantage on Dexterity saving throws. \nSTUNNED [CONDITION]\n While you have the Stunned condition, you experience the following effects. Incapacitated. You have the Incapacitated condition. Saving Throws Affected. You automatically fail Strength and Dexterity saving throws. Attacks Affected. Attack rolls against you have Advantage. \nUNCONSCIOUS [CONDITION]\n While you have the Unconscious condition, you experience the following effects. Inert. You have the Incapacitated and Prone conditions, and you drop whatever you're holding. When this condition ends, you remain Prone. Speed 0. Your Speed is 0 and can't increase. Attacks Affected. Attack rolls against you have Advantage. Saving Throws Affected. You automatically fail Strength and Dexterity saving throws. Automatic Critical Hits. Any attack roll that hits you is a Critical Hit if the attacker is within 5 feet of you. Unaware. You're unaware of your surroundings.",
+    sorcerousRestoration: "When you finish a Short Rest, you can regain expended Sorcery Points, but no more than a number equal to half your Sorcerer level (round down). Once you use this feature, you can't do so again until you finish a Long Rest.",
   },
   equipment: [
     {name: "Perfume", weight: 0, quantity: 1, worth: "5gp"},
@@ -150,7 +151,7 @@
     {name: "Knöpfe", weight: 0, quantity: 7, worth: "-"},
   ],
   coins: {cp: 0, sp: 231, ep: 0, gp: 76, pp: 0},
-  spellslots: {level1: 4, level2: 3},
+  spellslots: {level1: 4, level2: 3, level3: 2},
   spells: {
     guidance: {
       desc: "You touch a willing creature and choose a skill. Until the spell ends, the creature adds 1d4 to any ability check using the chosen skill.",
@@ -295,6 +296,26 @@
         range: 60,
         requirements: "-VS",
         misc: "10ft radius"
+      }
+    },
+    fireball: {
+      desc: "A bright streak flashes from you to a point you choose within range and then blossoms with a low roar into a fiery explosion. Each creature in a 20-foot-radius Sphere centered on that point makes a Dexterity saving throw, taking 8d6 Fire damage on a failed save or half as much damage on a successful one.\n Flammable objects in the area that aren't being worn or carried start burning. Using a Higher-Level Spell Slot. The damage increases by 1d6 for each spell slot level above 3.",
+      attributes: {
+        level: 3,
+        castingTime: "A",
+        range: 150,
+        requirements: "-VS",
+        misc: "20ft radius"
+      }
+    },
+    slow: {
+      desc: "You alter time around up to six creatures of your choice in a 40-foot Cube within range. Each target must succeed on a Wisdom saving throw or be affected by this spell for the duration.\n An affected target's Speed is halved, it takes a -2 penalty to AC and Dexterity saving throws, and it can't take Reactions. On its turns, it can take either an action or a Bonus Action, not both, and it can make only one attack if it takes the Attack action.\n If it casts a spell with a Somatic component, there is a 25 percent chance the spell fails as a result of the target making the spell's gestures too slowly. An affected target repeats the save at the end of each of its turns, ending the spell on itself on a success.",
+      attributes: {
+        level: 3,
+        castingTime: "A",
+        range: 120,
+        requirements: "C-VS",
+        misc: "1 min"
       }
     },
   }
