@@ -107,6 +107,7 @@
       uses: 0,
       desc: "+2 AC while waring no armor/shield. Attunemend!",
     },
+    schuppe: {uses: 0, desc: "+2 AC"},
     cloakOfProtection: {
       uses: 0,
       desc: "+1 AC. +1 on Saving Throws. Attunemend!",
@@ -157,7 +158,6 @@
     {name: "PoH", weight: 0.5, quantity: 2, worth: "50"},
     {name: "PogH", weight: 0.5, quantity: 1, worth: "450"},
     {name: "Walking Stick", weight: 5, quantity: 1, worth: "-"},
-    {name: "Schuppe (AC+2)", weight: 0, quantity: 1, worth: "-"},
     {name: "Knöpfe", weight: 0, quantity: 7, worth: "-"},
     {name: "Edelstein", weight: 0, quantity: 1, worth: "100gp"},
   ],
