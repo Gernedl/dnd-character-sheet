@@ -1,7 +1,7 @@
 {
   general: {
     maxHp: 32,
-    ac: 12,
+    ac: 15,
     characterName: "Samuel Serivo",
     hitDieMax: "5 D6",
     background: "Noble",
@@ -9,7 +9,7 @@
     className: "Sorcerer",
     subclass: "Wild Magic",
     level: 5,
-    xp: 6550
+    xp: 7700
   },
   basestats: {
     proficiencyBonus: 3,
@@ -99,9 +99,17 @@
       uses: 1,
       desc: "Holds a gallon of water (liquid)"
     },
-    hat: {
+    hatOfVermin: {
       uses: 3,
       desc: "spawns an animal (bat, rat, frog)"
+    },
+    bracesOfDefense: {
+      uses: 0,
+      desc: "+2 AC while waring no armor/shield. Attunemend!",
+    },
+    cloakOfProtection: {
+      uses: 0,
+      desc: "+1 AC. +1 on Saving Throws. Attunemend!",
     },
     heroicInspiration: {
       uses: 1,
@@ -143,14 +151,17 @@
     {name: "Waterskin", weight: 5, quantity: 1, worth: "2sp"},
     {name: "Ring (Oma)", weight: 0, quantity: 1, worth: "-"},
     {name: "Bedroll", weight: 7, quantity: 1, worth: "1gp"},
-    {name: "Ration", weight: 2, quantity: 11, worth: "5sp"},
+    {name: "Ration", weight: 2, quantity: 4, worth: "5sp"},
     {name: "Book", weight: 5, quantity: 1, worth: "25gp"},
     {name: "PgM", weight: 0.5, quantity: 1, worth: "-"},
+    {name: "PoH", weight: 0.5, quantity: 2, worth: "50"},
+    {name: "PogH", weight: 0.5, quantity: 1, worth: "450"},
     {name: "Walking Stick", weight: 5, quantity: 1, worth: "-"},
     {name: "Schuppe (AC+2)", weight: 0, quantity: 1, worth: "-"},
     {name: "Knöpfe", weight: 0, quantity: 7, worth: "-"},
+    {name: "Edelstein", weight: 0, quantity: 1, worth: "100gp"},
   ],
-  coins: {cp: 0, sp: 231, ep: 0, gp: 76, pp: 0},
+  coins: {cp: 0, sp: 171, ep: 0, gp: 0, pp: 0},
   spellslots: {level1: 4, level2: 3, level3: 2},
   spells: {
     guidance: {
