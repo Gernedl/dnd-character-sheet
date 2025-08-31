@@ -217,6 +217,43 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
       </svg>
+      Items
+    </button>
+    <div x-cloak x-show="isExpanded" x-transition class="divide-y">
+      <template x-for="item in equipment.filter(x => x.details)" :key="item.name">
+        <div x-data="{isExpanded: false}" class="mx-8">
+          <div class="flex flex-row justify-between">
+            <button type="button" class="flex items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+              <span x-text="item.name"></span>
+            </button>
+            <div class="flex flex-row gap-2 items-center text-base" x-data="{cur: loadNum(item.name), att: loadBool('Att-'+item.name)}" x-init="$watch('cur', sync(item.name));$watch('att', sync('Att-'+item.name))">
+              <template x-for="i in (item.details.uses ?? 0)" :key="i">
+                <input type="checkbox" :checked="cur >= i" @click="cur += (cur >= i) ? -1 : 1" class="scale-125"/>
+              </template>
+              <template x-if="item.details.attunemend">
+                <div>
+                  Attuned:   
+                  <input type="checkbox" :checked="att" @click="att = !att;" class="scale-125"/>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div x-cloak x-show="isExpanded" x-transition x-text="item.details.desc" class="whitespace-pre-line"></div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <hr class="w-full"/>
+
+  <div x-data="{ isExpanded: false }" class="w-full">
+    <button type="button" class="flex w-full items-center gap-4 p-4 text-left underline-offset-2" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  ''  :  '-rotate-90'">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+      </svg>
       Equipment
     </button>
     <div x-cloak x-show="isExpanded" x-transition>
@@ -259,16 +296,21 @@
     const embeddedJson = /* #data# */
 
     const getModier = (stat) => 0 + Math.floor((stat - 10) / 2)
-    const applyProficiency = (val, doApply) => doApply ? (val + (embeddedJson?.basestats?.proficiencyBonus ?? 0)) : val
+    const applyProficiency = (val, doApply = 0) => val + doApply * (embeddedJson?.basestats?.proficiencyBonus ?? 0)
     const transformKey = (key) => key.charAt(0).toUpperCase()+key.slice(1).replace(/([a-z])([A-Z0-9])/g, '$1 $2');
-    const LSK = "DND-CHARACTER" + embeddedJson.characterName;
+    const LSK = "DND-CHARACTER" + embeddedJson.general.characterName;
     const range = (size) => [...new Array(size).keys().map(x => x+1)];
     const sync = (key) => (val) => localStorage.setItem(LSK+key, val);
     const loadNum = (key, def = 0) => {
       const data = localStorage.getItem(LSK+key);
-      if (data) return parseInt(data)
-      else return def
+      if (data) return parseInt(data);
+      else return def;
     };
+    const loadBool = (key, def = false) => {
+      const data = localStorage.getItem(LSK+key);
+      if (data) return new Boolean(data).valueOf();
+      return def;
+    }
     console.log(embeddedJson)
   </script>
 
