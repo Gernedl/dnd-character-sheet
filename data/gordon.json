@@ -12,12 +12,12 @@
     xp: 0
   },
   basestats: {
-    proficiencyBonus: 4,
+    proficiencyBonus: 3,
     initiative: 5,
     speed: "30 ft",
     size: "small",
     carryCapacity: 180,
-    passivePerception: 11,
+    passivePerception: 16,
     spellcastingModifier: 3,
     spellSaveDc: 14,
     spellAttackBonus: 6,
@@ -40,13 +40,13 @@
       }
     },
     constitution: {
-      stat: 15,
+      stat: 13,
       abilities: {
         save: 0,
       }
     },
     intelligence: {
-      stat: 12,
+      stat: 16,
       abilities: {
         save: 0,
         arcana: 0,
@@ -57,7 +57,7 @@
       }
     },
     wisdom: {
-      stat: 13,
+      stat: 10,
       abilities: {
         save: 0,
         insight: 1,
