@@ -68,7 +68,7 @@
       }
     },
     charisma: {
-      stat: 19,
+      stat: 8,
       abilities: {
         save: 0,
         deception: 1,
@@ -76,7 +76,7 @@
         persuasion: 0,
         performance: 1
       }
-    },
+    }
   },
   usables: {
     waterskin: {
@@ -94,7 +94,7 @@
     giftOfTheChromaticDragonResistance: {
       uses: 2,
       desc: "Can use a reaction to gain resistance to a certain dmg-type"
-    },
+    }
   },
   misc: {
     cunningAction: "Can use Dash, Disengage and Hide as a bonus action",
@@ -116,30 +116,16 @@
     weaponMastery: "Shortbow: Vex - If you hit and deal damage, you have advantage on your next attack roll (until the end of your next turn).\n Dagger: Nick - If you make an extra attack using the light property you can make it as a part of your action."
   },
   equipment: [
-    {name: "Perfume", weight: 0, quantity: 1, worth: "5gp"},
-    {name: "Fine Clothes", weight: 6, quantity: 1, worth: "15gp"},
-    {name: "Fine Clothes (2)", weight: 10, quantity: 1, worth: "25gp"},
-    {name: "Playing Cards", weight: 0, quantity: 1, worth: "5sp"},
-    {name: "Dagger", weight: 1, quantity: 2, worth: "2gp"},
-    {name: "Arcane Focus (Ring)", weight: 0, quantity: 1, worth: "-"},
-    {name: "Backpack", weight: 5, quantity: 1, worth: "2gp"},
-    {name: "Caltrops", weight: 2, quantity: 1, worth: "1gp"},
-    {name: "Crowbar", weight: 5, quantity: 1, worth: "2gp"},
-    {name: "Oil", weight: 1, quantity: 2, worth: "1sp"},
-    {name: "Rope", weight: 5, quantity: 1, worth: "1gp"},
-    {name: "Tinderbox", weight: 1, quantity: 1, worth: "5sp"},
-    {name: "Torches", weight: 1, quantity: 6, worth: "1cp"},
-    {name: "Waterskin", weight: 5, quantity: 1, worth: "2sp"},
-    {name: "Ring (Oma)", weight: 0, quantity: 1, worth: "-"},
-    {name: "Bedroll", weight: 7, quantity: 1, worth: "1gp"},
-    {name: "Ration", weight: 2, quantity: 4, worth: "5sp"},
-    {name: "Book", weight: 5, quantity: 1, worth: "25gp"},
-    {name: "PgM", weight: 0.5, quantity: 1, worth: "-"},
-    {name: "PoH", weight: 0.5, quantity: 1, worth: "50gp"},
-    {name: "Nachtschatten Zunge (PoH)", weight: 0.5, quantity: 1, worth: "-"},
-    {name: "dust of sneezing", weight: 0, quantity: 1, worth: "-"},
-    {name: "Walking Stick", weight: 5, quantity: 1, worth: "-"},
-    {name: "Knöpfe", weight: 0, quantity: 7, worth: "-"},
+    {name: "Arrows", weight: 0, quantity: 9},
+    {name: "Dagger", weight: 0, quantity: 2, worth: "-", details: {
+      desc: "Atk Bonus: +6, Damage: 1d4+3 Piercing, Properties: Finesse, Light, Thrown"
+    }},
+    {name: "Shortsword", weight: 0, quantity: 2, worth: "-", details: {
+      desc: "Atk Bonus: +6, Damage: 1d6+3 Piercing, Properties: Finesse, Light"
+    }},
+    {name: "Shortbow", weight: 0, quantity: 2, worth: "-", details: {
+      desc: "Atk Bonus: +6, Damage: 1d6+3 Piercing, Properties: Finesse, Light, Range: 80/320"
+    }}
   ],
   coins: {cp: 144, sp: 65, ep: 0, gp: 115, pp: 0},
   spellslots: {level1: 3},
@@ -183,6 +169,6 @@
         requirements: "C-VS",
         misc: "5ft radius, 1 min"
       }
-    },
+    }
   }
 }
