@@ -136,7 +136,7 @@
         level: 0,
         castingTime: "A",
         range: 120,
-        requirements: "-S",
+        requirements: "-SM",
         misc: "1 round"
       }
     },
@@ -166,8 +166,38 @@
         level: 1,
         castingTime: "A",
         range: 60,
-        requirements: "C-VS",
+        requirements: "C-VSM",
         misc: "5ft radius, 1 min"
+      }
+    },
+    disguiseSelf: {
+      desc: "You make yourself-including your clothing, armor, weapons, and other belongings on your person-look different until the spell ends. You can seem 1 foot shorter or taller and can appear heavier or lighter. You must adopt a form that has the same basic arrangement of limbs as you have. Otherwise, the extent of the illusion is up to you.\nThe changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing.\nTo discern that you are disguised, a creature must take the Study action to inspect your appearance and succeed on an Intelligence (Investigation) check against your spell save DC.",
+      attributes: {
+        level: 1,
+        castingTime: "A",
+        range: 0,
+        requirements: "-VS",
+        misc: "1 h"
+      }
+    },
+    alarm: {
+      desc: "You set an alarm against intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot Cube. Until the spell ends, an alarm alerts you whenever a creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is audible or mental:\nAudible Alarm. The alarm produces the sound of a handbell for 10 seconds within 60 feet of the warded area.\nMental Alarm. You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if you're asleep.",
+      attributes: {
+        level: 1,
+        castingTime: "1 min (Rit)",
+        range: 30,
+        requirements: "-VSM",
+        misc: "8 h"
+      }
+    },
+    featherFall: {
+      desc: "Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If a creature lands before the spell ends, the creature takes no damage from the fall, and the spell ends for that creature.",
+      attributes: {
+        level: 1,
+        castingTime: "R",
+        range: 60,
+        requirements: "-VM",
+        misc: "1 min"
       }
     }
   }
